@@ -1,0 +1,22 @@
+{
+    "name": "fullybaked/pslacker",
+    "description": "Integrate your app with Slack.com inbound web hook",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dave Baker",
+            "email": "david@fullybaked.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "FullyBaked": "src"
+        }
+    }
+}

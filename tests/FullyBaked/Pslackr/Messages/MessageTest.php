@@ -7,7 +7,7 @@ use Exception;
 
 class MessageTest extends PHPUnit_Framework_TestCase
 {
-    public function testAsJson()
+    public function testAsJsonReturnsMinimumJsonRequired()
     {
         $message = new Message();
         $message->text('Message text goes here');

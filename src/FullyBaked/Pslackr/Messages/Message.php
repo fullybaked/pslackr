@@ -11,11 +11,6 @@ interface Message
     public function asJson();
 
     /**
-     * set the required 'text' parameter of the message
-     */
-    public function text($messageText);
-
-    /**
      * set an optional 'channel' parameter of the message
      */
     public function channel($channelName);

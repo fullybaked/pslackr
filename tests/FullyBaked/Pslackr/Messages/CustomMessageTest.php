@@ -10,7 +10,7 @@ class CustomMessageTest extends PHPUnit_Framework_TestCase
 
     public function testConstructorSetsTextProperty()
     {
-        $text = 'This is as test message';
+        $text = 'This is a test message';
 
         $relection = new \ReflectionClass('FullyBaked\Pslackr\Messages\CustomMessage');
         $property = $relection->getProperty('text');

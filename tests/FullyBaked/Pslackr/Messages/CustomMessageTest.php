@@ -34,4 +34,44 @@ class CustomMessageTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($result, $expected);
     }
 
+    public function testJsonContainsChannelParam()
+    {
+        $message = new CustomMessage('This is a test message');
+
+        $message->channel('#testing');
+        $expected = '{"text":"This is a test message","channel":"#testing"}';
+        $result = $message->asJson();
+        $this->assertEquals($expected, $result);
+    }
+
+
+    public function testJsonContainsUsernameParam()
+    {
+        $message = new CustomMessage('This is a test message');
+
+        $message->username('webhookbot');
+        $expected = '{"text":"This is a test message","username":"webhookbot"}';
+        $result = $message->asJson();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testJsonContainsIconEmoji()
+    {
+        $message = new CustomMessage('This is a test message');
+
+        $message->iconEmoji(':ghost:');
+        $expected = '{"text":"This is a test message","icon_emoji":":ghost:"}';
+        $result = $message->asJson();
+        $this->assertEquals($expected, $result);
+    }
+
+    public function testJsonContainsIconUrl()
+    {
+        $message = new CustomMessage('This is a test message');
+
+        $message->iconUrl('http://test.img/img.png');
+        $expected = '{"text":"This is a test message","icon_url":"http:\/\/test.img\/img.png"}';
+        $result = $message->asJson();
+        $this->assertEquals($expected, $result);
+    }
 }

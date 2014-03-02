@@ -23,4 +23,15 @@ class CustomMessageTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($text, $property->getValue($message));
     }
 
+    public function testAsJsonReturnsMinimumJsonRequired()
+    {
+        $text = 'This is a test message';
+        $message = new CustomMessage($text);
+
+        $expected = '{"text":"This is a test message"}';
+        $result = $message->asJson();
+
+        $this->assertEquals($result, $expected);
+    }
+
 }

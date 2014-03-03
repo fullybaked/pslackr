@@ -16,9 +16,7 @@ class PslackrTest extends PHPUnit_Framework_TestCase
         $domainAttr = $relection->getProperty('domain');
         $domainAttr->setAccessible(true);
 
-        $slack = $this->getMockBuilder('FullyBaked\Pslackr\Pslackr')
-            ->setConstructorArgs([$config])
-            ->getMock();
+        $slack = new Pslackr($config);
 
         $this->assertEquals($config['token'], $tokenAttr->getValue($slack));
         $this->assertEquals($config['domain'], $domainAttr->getValue($slack));

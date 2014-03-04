@@ -6,6 +6,7 @@ php:
   - 5.3
 
 before_script:
-  - composer install
+  - composer install --dev --verbose
 
-script: ./vendor/phpunit/phpunit/phpunit.php tests/
+script: 
+  - ./vendor/phpunit/phpunit/phpunit.php tests/

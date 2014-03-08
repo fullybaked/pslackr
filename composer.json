@@ -1,11 +1,16 @@
 {
     "name": "fullybaked/pslackr",
-    "description": "Integrate your app with Slack.com inbound web hook",
+    "type": "library",
+    "keywords": ["slack.com", "slack],
+    "homepage": "https://github.com/fullybaked/pslackr",
+    "description": "Inbound Webook intergration for Slack.com",
     "license": "MIT",
     "authors": [
         {
             "name": "Dave Baker",
-            "email": "david@fullybaked.co.uk"
+            "email": "david@fullybaked.co.uk",
+            "homepage": "www.fullybaked.co.uk",
+            "role": "Developer"
         }
     ],
     "require": {

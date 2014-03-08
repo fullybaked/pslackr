@@ -12,6 +12,7 @@ class CustomMessage implements Message
     {
         $this->text = $messageText;
     }
+
     public function asJson()
     {
         $message = ['text' => 'This is a test message'];

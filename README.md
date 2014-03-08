@@ -70,9 +70,9 @@ $message->channel('#my-other-channel');
 
 $message->username('slackbot');
 
-$message->icon_url('http://example.tld/path/to/my.png');
+$message->iconUrl('http://example.tld/path/to/my.png');
 // OR //
-$message->icon_emoji(':ghost:');
+$message->iconEmoji(':ghost:');
 
 ```
 

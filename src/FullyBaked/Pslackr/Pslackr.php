@@ -2,21 +2,26 @@
 
 namespace FullyBaked\Pslackr;
 
+use Guzzle\Http\Client;
+
 class Pslackr implements Transport
 {
     protected $token;
 
-    protected $domain;
-
     public function __construct($config)
     {
         $this->token = $config['token'];
-        $this->domain = $config['domain'];
+
+        $url = "https://{$config['domain']}.slack.com/services/hooks/";
+        $this->client = new Client($url);
     }
 
-    public function send(FullyBaked\Pslackr\Messages\Message $message)
+    public function send(Messages\Message $message)
     {
-
+        $path = "incoming-webhook?token={$this->token}";
+        $request = $this->client->post($path);
+        $request->setBody($message->asJson(), 'application/json');
+        $request->send();
     }
 
 }

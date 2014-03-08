@@ -2,7 +2,7 @@
 
 namespace FullyBaked\Pslackr;
 
-class Pslackr
+class Pslackr implements Transport
 {
     protected $token;
 
@@ -12,6 +12,11 @@ class Pslackr
     {
         $this->token = $config['token'];
         $this->domain = $config['domain'];
+    }
+
+    public function send(FullyBaked\Pslackr\Messages\Message $message)
+    {
+
     }
 
 }

@@ -4,5 +4,8 @@ namespace FullyBaked\Pslackr;
 
 interface Transport
 {
-    public function send(FullyBaked\Pslackr\Messages\Message $message);
+    /**
+     * must POST the $message to the Slack incoming-webhook
+     */
+    public function send(Messages\Message $message);
 }

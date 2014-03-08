@@ -15,7 +15,7 @@ class CustomMessage implements Message
 
     public function asJson()
     {
-        $message = ['text' => 'This is a test message'];
+        $message = ['text' => $this->text];
 
         $message = array_merge($message, $this->optionalFields);
 

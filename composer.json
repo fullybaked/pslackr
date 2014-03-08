@@ -1,7 +1,7 @@
 {
     "name": "fullybaked/pslackr",
     "type": "library",
-    "keywords": ["slack.com", "slack],
+    "keywords": ["slack.com", "slack"],
     "homepage": "https://github.com/fullybaked/pslackr",
     "description": "Inbound Webook intergration for Slack.com",
     "license": "MIT",

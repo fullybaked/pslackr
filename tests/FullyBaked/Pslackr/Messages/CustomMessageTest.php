@@ -3,75 +3,81 @@
 namespace FullyBaked\Pslackr\Messages;
 
 use PHPUnit_Framework_TestCase;
-use Exception;
 
 class CustomMessageTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var string
+     */
+    protected $expectedMessage = 'This is a test message';
 
-    public function testConstructorSetsTextProperty()
+    public function testConstructorSetsMessageTextProperty()
     {
-        $text = 'This is a test message';
+        $expected = $this->expectedMessage;
 
-        $relection = new \ReflectionClass('FullyBaked\Pslackr\Messages\CustomMessage');
-        $property = $relection->getProperty('text');
-        $property->setAccessible(true);
+        $message = $this->fetchNewCustomMessage();
+        $actual = $message->getMessageText();
 
-        $message = $this->getMockBuilder('FullyBaked\Pslackr\Messages\CustomMessage')
-            ->setConstructorArgs([$text])
-            ->getMock();
-
-        $this->assertEquals($text, $property->getValue($message));
+        $this->assertEquals($expected, $actual);
     }
 
     public function testAsJsonReturnsMinimumJsonRequired()
     {
-        $text = 'This is a test message';
-        $message = new CustomMessage($text);
+        $message = $this->fetchNewCustomMessage();
 
         $expected = '{"text":"This is a test message"}';
-        $result = $message->asJson();
+        $actual = $message->asJson();
 
-        $this->assertEquals($result, $expected);
+        $this->assertEquals($expected, $actual);
     }
 
     public function testJsonContainsChannelParam()
     {
-        $message = new CustomMessage('This is a test message');
+        $message = $this->fetchNewCustomMessage();
 
         $message->channel('#testing');
         $expected = '{"text":"This is a test message","channel":"#testing"}';
-        $result = $message->asJson();
-        $this->assertEquals($expected, $result);
+        $actual = $message->asJson();
+        $this->assertEquals($expected, $actual);
     }
 
 
     public function testJsonContainsUsernameParam()
     {
-        $message = new CustomMessage('This is a test message');
+        $message = $this->fetchNewCustomMessage();
 
         $message->username('webhookbot');
         $expected = '{"text":"This is a test message","username":"webhookbot"}';
-        $result = $message->asJson();
-        $this->assertEquals($expected, $result);
+        $actual = $message->asJson();
+        $this->assertEquals($expected, $actual);
     }
 
     public function testJsonContainsIconEmoji()
     {
-        $message = new CustomMessage('This is a test message');
+        $message = $this->fetchNewCustomMessage();
 
         $message->iconEmoji(':ghost:');
         $expected = '{"text":"This is a test message","icon_emoji":":ghost:"}';
-        $result = $message->asJson();
-        $this->assertEquals($expected, $result);
+        $actual = $message->asJson();
+        $this->assertEquals($expected, $actual);
     }
 
     public function testJsonContainsIconUrl()
     {
-        $message = new CustomMessage('This is a test message');
+        $message = $this->fetchNewCustomMessage();
 
         $message->iconUrl('http://test.img/img.png');
         $expected = '{"text":"This is a test message","icon_url":"http:\/\/test.img\/img.png"}';
-        $result = $message->asJson();
-        $this->assertEquals($expected, $result);
+        $actual = $message->asJson();
+        $this->assertEquals($expected, $actual);
+    }
+
+    /**
+     * @return CustomMessage
+     */
+    protected function fetchNewCustomMessage()
+    {
+        $message = new CustomMessage($this->expectedMessage);
+        return $message;
     }
 }

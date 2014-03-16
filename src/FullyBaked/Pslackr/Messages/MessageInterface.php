@@ -2,7 +2,7 @@
 
 namespace FullyBaked\Pslackr\Messages;
 
-interface Message
+interface MessageInterface
 {
     /**
      * return the data as a JSON string to send as message

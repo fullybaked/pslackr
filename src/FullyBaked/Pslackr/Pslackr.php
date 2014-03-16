@@ -4,10 +4,20 @@ namespace FullyBaked\Pslackr;
 
 use Guzzle\Http\Client;
 
-class Pslackr implements Transport
+/**
+ * Class Pslackr
+ * @package FullyBaked\Pslackr
+ */
+class Pslackr implements TransportInterface
 {
+    /**
+     * @var string
+     */
     protected $token;
 
+    /**
+     * @param $config
+     */
     public function __construct($config)
     {
         $this->token = $config['token'];
@@ -16,7 +26,10 @@ class Pslackr implements Transport
         $this->client = new Client($url);
     }
 
-    public function send(Messages\Message $message)
+    /**
+     * @param Messages\MessageInterface $message
+     */
+    public function send(Messages\MessageInterface $message)
     {
         $path = "incoming-webhook?token={$this->token}";
         $request = $this->client->post($path);

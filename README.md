@@ -79,7 +79,7 @@ $message->iconEmoji(':ghost:');
 ### Changing the HTTP Client
 
 By default Pslackr was built with [Guzzle][2] and has it listed as a dependency, however for various reasons you may
-wish to use your own HTTP client.  If so, this can be acheived by implementing the `Transport` interface using your
+wish to use your own HTTP client.  If so, this can be acheived by implementing the `TransportInterface` using your
 own choice of HTTP client.
 
 [1]: https://getcomposer.org/

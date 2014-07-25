@@ -2,7 +2,7 @@
 
 namespace FullyBaked\Pslackr;
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 
 class Pslackr implements Transport
 {
@@ -10,18 +10,17 @@ class Pslackr implements Transport
 
     public function __construct($config)
     {
-        $this->token = $config['token'];
+        $this->endpoint = "https://{$config['domain']}.slack.com/services/hooks/incoming-webhook?token={$config['token']}";
 
-        $url = "https://{$config['domain']}.slack.com/services/hooks/";
-        $this->client = new Client($url);
+        $this->client = new Client();
     }
 
     public function send(Messages\Message $message)
     {
-        $path = "incoming-webhook?token={$this->token}";
-        $request = $this->client->post($path);
-        $request->setBody($message->asJson(), 'application/json');
-        $request->send();
+        $request = $this->client->createRequest('POST', $this->endpoint, [
+            'json' => $message()
+        ]);
+        $this->client->send($request);
     }
 
 }

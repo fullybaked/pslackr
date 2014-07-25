@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fullybaked/pslackr.png?branch=master)](https://travis-ci.org/fullybaked/pslackr)
+[![Build Status](https://travis-ci.org/fullybaked/pslackr.svg?branch=master)](https://travis-ci.org/fullybaked/pslackr)
 
 # pslackr [slak-er]
 

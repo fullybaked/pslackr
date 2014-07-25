@@ -22,6 +22,15 @@ class CustomMessage implements Message
         return json_encode($message);
     }
 
+    public function __invoke()
+    {
+        $message = ['text' => $this->text];
+
+        $message = array_merge($message, $this->optionalFields);
+
+        return $message;
+    }
+
     public function channel($channelName)
     {
         $this->optionalFields['channel'] = $channelName;

@@ -6,31 +6,17 @@ pSlackr is a library for integrating Slack.com's inbound web hook
 into your application enabling you to send messages to your group
 chat channels from your application
 
-## Installing via Composer
+## Installing 
 
-The recommended way to install Pslackr is via [Composer][1]
+It's best to install via [Composer][1].  If you're not already using [Composer][1] check out their documentation for details.
 
-```
-# Install composer
-curl -sS https://getcomposer.org/installer | php
-```
-
-Edit `composer.json`
-```
-{
-    "require": {
-        "fullybaked/pslackr": "dev-master"
-    }
-}
-```
-
-Then run `composer install`
-
-After installing you will need to require Composer's autoloader.
+Running the following from your app directory (where the composer.json resides) will add Pslackr to your project.
 
 ```
-require 'vendor/autoload.php';
+composer require fullybaked/pslackr
+composer update
 ```
+
 
 ## Usage
 

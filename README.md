@@ -8,9 +8,7 @@ chat channels from your application
 
 ## Installing 
 
-It's best to install via [Composer][1].  If you're not already using [Composer][1] check out their documentation for details.
-
-Running the following from your app directory (where the composer.json resides) will add Pslackr to your project.
+Via [Composer][1]
 
 ```
 composer require fullybaked/pslackr

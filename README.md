@@ -15,6 +15,12 @@ composer require fullybaked/pslackr
 composer update
 ```
 
+## Warning! Slack API Changes
+
+Slack have changed their API and it means that you need to do something slightly different.  As of November 20th 2014 Pslackr is still working fine, but please make sure you have the correct token to supply to the config.  See [https://github.com/fullybaked/pslackr/issues/4][3] for details.  
+
+I am reading up on and modifying Pslackr to handle the new API method while still supporting the old.
+
 
 ## Usage
 
@@ -68,3 +74,4 @@ own choice of HTTP client.
 
 [1]: https://getcomposer.org/
 [2]: http://docs.guzzlephp.org/en/latest/index.html
+[3]: https://github.com/fullybaked/pslackr/issues/4

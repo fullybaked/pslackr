@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fullybaked/pslackr.svg?branch=master)](https://travis-ci.org/fullybaked/pslackr)
+[![Build Status](https://travis-ci.org/fullybaked/pslackr.svg?branch=master)](https://travis-ci.org/fullybaked/pslackr) [![Code Climate](https://codeclimate.com/github/fullybaked/pslackr/badges/gpa.svg)](https://codeclimate.com/github/fullybaked/pslackr)
 
 # pslackr [slak-er]
 

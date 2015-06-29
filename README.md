@@ -15,12 +15,15 @@ composer require fullybaked/pslackr
 composer update
 ```
 
-## Warning! Slack API Changes
+### Slack API Token
 
-Slack have changed their API and it means that you need to do something slightly different.  As of November 20th 2014 Pslackr is still working fine, but please make sure you have the correct token to supply to the config.  See [https://github.com/fullybaked/pslackr/issues/4][3] for details.  
+Pslackr uses the old style of sending the token with the request to Slack, so to find the correct token go to your inbound web hook on Slack and you should see 
 
-I am reading up on and modifying Pslackr to handle the new API method while still supporting the old.
+```
+https://hooks.slack.com/services/A111AA1AA/B00BB0BBB/aBCDe1FGHijKlmNoP
+```
 
+Where ever Pslackr requires an API token you need to use the last string in the URL `aBCDe1FGHijKlmNoP` in the example above.
 
 ## Usage
 

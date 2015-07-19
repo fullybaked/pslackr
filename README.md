@@ -12,7 +12,6 @@ Via [Composer][1]
 
 ```
 composer require fullybaked/pslackr
-composer update
 ```
 
 ### Slack API Token
